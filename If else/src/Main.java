@@ -172,6 +172,6 @@ class Main{
                   System.out.println("No Discount");
                   System.out.println("Total Amount :"+totalAmount);
 
-      }
+              }
   }
 }
