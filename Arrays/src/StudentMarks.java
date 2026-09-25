@@ -16,7 +16,8 @@ public class StudentMarks {
             totalMarks+=arr[i];
         }
         System.out.println("Total marks: "+totalMarks);
-        System.out.println("Average marks: "+(totalMarks/n));
+        double avg = totalMarks/n;
+        System.out.println("Average marks: "+avg );
         int maxMarks =Integer.MIN_VALUE;
         for(int i =0;i<n;i++){
              if(arr[i]>maxMarks){
@@ -30,8 +31,14 @@ public class StudentMarks {
                 minMarks = arr[i];
             }
         }
+
         System.out.println("Lowest mark: "+minMarks);
-        
+        if(avg>=40){
+            System.out.println("Pass");
+        }
+        else{
+            System.out.println("Fail ");
+        }
 
     }
 }

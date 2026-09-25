@@ -19,7 +19,7 @@ public class SecondLargestNumber {
                   max = arr[i];
 
              }
-             else if(arr[i]>secondMax && arr[i]!=max){
+             else if(arr[i]>=secondMax && arr[i]!=max){
                         secondMax = arr[i];
              }
 

@@ -18,7 +18,7 @@ public class PositiveNumbers {
         }
         //13. Print Numbers Greater Than 50
         for(int i=0;i<n;i++){
-            if(arr[i]>=50){
+            if(arr[i]>50){
                 System.out.print(arr[i]+" ");
             }
         }

@@ -16,7 +16,6 @@ public class PrimeNumber {
                     break;
                 }
             }
-
             if (isPrime) {
                 System.out.println("Prime Number");
             } else {
@@ -27,7 +26,7 @@ public class PrimeNumber {
         System.out.println("Prime Numbers in a Range");
         System.out.println("Enter the Start Number :");
         int start = sc.nextInt();
-        System.out.println("Enter the ENd  Number :");
+        System.out.println("Enter the End  Number :");
         int end  = sc.nextInt();
         for(int i=start;i<=end;i++){
             if(i<=1) continue;

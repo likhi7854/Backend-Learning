@@ -38,7 +38,8 @@ public class BasicProblems {
         }
         System.out.println("Sum :"+sum);
         //5.Find Average
-        System.out.println("Avaerage "+ (sum/n));
+        double avg = (double) sum/n;
+        System.out.println("Avaerage "+ avg);
 
     }
 }

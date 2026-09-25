@@ -13,14 +13,14 @@ public class SeparateEvenOddElements {
         }
         System.out.println("Even Elements :");
         for (int i = 0; i < n; i++) {
-            if (i % 2 == 0) {
+            if (arr[i] % 2 == 0) {
                 System.out.print( arr[i]+" ");
             }
         }
         System.out.println();
         System.out.println("Odd Elements : ");
         for (int i = 0; i < n; i++) {
-            if (i % 2 != 0) {
+            if (arr[i] % 2 != 0) {
                 System.out.print( arr[i]+" ");
             }
         }

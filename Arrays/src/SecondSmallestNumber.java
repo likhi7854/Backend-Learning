@@ -18,7 +18,7 @@ public class SecondSmallestNumber {
                 secondMin = min;
                 min = arr[i];
             }
-            else if(arr[i]<secondMin && arr[i]!=min){
+            else if(arr[i]<=secondMin && arr[i]!=min){
                 secondMin = arr[i];
             }
 

@@ -11,19 +11,19 @@ public class CountEvenOddNumbers {
         for(int i =0;i<n;i++){
               arr[i] = sc.nextInt();
         }
-        int evenSum =0;
-        int oddSum = 0;
+        int evenCount =0;
+        int oddCount = 0;
         for(int i=0;i<n;i++){
              if(arr[i]%2==0) {
-                 evenSum+=arr[i];
+                evenCount++;
              }
              else{
-                 oddSum+=arr[i];
+                oddCount++;
              }
 
         }
-        System.out.println("Even Sum :"+evenSum);
-        System.out.println("Odd Sum: "+oddSum);
+        System.out.println("Even Count :"+evenCount);
+        System.out.println("Odd Count  :"+oddCount);
 
     }
 }
