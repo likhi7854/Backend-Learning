@@ -11,7 +11,7 @@ public class RemoveSpaces {
         int n = s.length();
         String r="";
         for(int i=0;i<n;i++){
-            char  c = s.toLowerCase().charAt(i);
+            char  c = s.charAt(i);
             if(c!=' '){
                 r+=c;
             }

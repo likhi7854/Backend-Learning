@@ -9,12 +9,15 @@ public class LargestWord {
         String s = sc.nextLine();
         String[] arr = s.split(" ");
         int maxLength = Integer.MIN_VALUE;
+        String r ="";
         for(String i:arr){
             int n = i.length();
             if(n>=maxLength){
                 maxLength = n;
+                r = i;
             }
         }
+        System.out.println(r);
 
 
     }

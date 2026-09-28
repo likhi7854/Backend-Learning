@@ -8,10 +8,12 @@ public class CountOccurrence {
         System.out.println("Enter the String ");
         String s = sc.nextLine();
         int n = s.length();
+        System.out.println("Enter the character ");
+        char l = sc.next().charAt(0);
         int count =0;
         for (int i = 0;i<n;i++) {
             char c = s.toLowerCase().charAt(i);
-            if(c=='a'){
+            if(c==l){
                 count++;
             }
         }
