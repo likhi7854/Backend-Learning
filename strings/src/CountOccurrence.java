@@ -12,7 +12,7 @@ public class CountOccurrence {
         char l = sc.next().charAt(0);
         int count =0;
         for (int i = 0;i<n;i++) {
-            char c = s.toLowerCase().charAt(i);
+            char c = s.charAt(i);
             if(c==l){
                 count++;
             }

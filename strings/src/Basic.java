@@ -32,6 +32,8 @@ public class Basic {
              count++;
         }
         System.out.println("Count "+ count);
+        //or
+        System.out.println(s.length());
 
         //5.Convert Uppercase/Lowercase
 
