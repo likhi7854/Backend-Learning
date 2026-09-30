@@ -1,3 +1,4 @@
+//4. Parameterized Constructor
 public class ParameterizedConstructor {
     public static void main(String[] args) {
         Patient p = new Patient(101,"Likhitha",21);
