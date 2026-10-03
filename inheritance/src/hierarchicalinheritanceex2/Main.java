@@ -1,7 +1,6 @@
 package hierarchicalinheritanceex2;
 
-
-
+//8. Hospital Management Inheritance
 public class Main {
     public static void main(String[] args) {
         Patient p1 = new Patient("Swathi",21,2101,"cancer",5300);

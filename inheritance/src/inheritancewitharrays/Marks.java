@@ -7,13 +7,14 @@ public class Marks extends Student {
         this.marks = n;
     }
     void displauResults(){
-
+        boolean pass = true;
         int total =0;
         int highest=Integer.MIN_VALUE;
         int lowest =Integer.MAX_VALUE;
         System.out.println("Enter the marks :");
          for(int i=0;i<marks.length;i++){
              System.out.println(marks[i]);
+
                 total +=marks[i];
                 if(marks[i]>highest){
                     highest=marks[i];
@@ -26,12 +27,19 @@ public class Marks extends Student {
         System.out.println("Total :" +total);
         System.out.println("Highest :"+highest);
         System.out.println("Lowest "+lowest);
-         if(avg>=40){
-             System.out.println("Pass ");
-         }
-         else {
-             System.out.println("Fail ");
-         }
+        for(int i=0;i<marks.length;i++) {
+
+            if (marks[i] <40) {
+               pass= false;
+               break;
+            }
+        }
+        if(pass){
+            System.out.println("Pass");
+        }
+        else{
+            System.out.println("Fail ");
+        }
 
 
     }
