@@ -3,16 +3,18 @@ package hospitalbillingabstraction;
 public class DoctorConsultation extends HospitalService{
     String doctorName;
     double consultationFee;
+    double bill;
     double finalBill;
     double discount;
-    public DoctorConsultation(String patientName, int patientId, String doctorName, double consultationFee) {
+    public DoctorConsultation(String patientName, int patientId, String doctorName, double consultationFee,double bill) {
         super(patientName, patientId);
         this.doctorName = doctorName;
+        this.bill = bill;
         this.consultationFee = consultationFee;
     }
     @Override
     void calculateBill(){
-            if(consultationFee>=2000){
+            if(bill>=2000){
                 System.out.println("10% discount will apply");
                 discount = consultationFee*10/100;
             }

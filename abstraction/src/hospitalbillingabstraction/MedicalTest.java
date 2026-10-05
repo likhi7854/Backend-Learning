@@ -28,6 +28,5 @@ public class MedicalTest extends HospitalService {
             System.out.println("Original Fee : " + testCost);
             System.out.println("Discount     : " + discount);
             System.out.println("Final Bill   : " + finalBill);
-
     }
 }
