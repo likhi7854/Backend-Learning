@@ -14,27 +14,23 @@ public class GroceryOrder implements Order {
         this.quantity = quantity;
     }
     @Override
-    public void calculateBill(){
-        totalPrice= price*quantity;
+    public void calculateBill() {
+        totalPrice = price * quantity;
 
-    }
-    void displayDetails(){
-        System.out.println("Customer name :"+customerName);
-        System.out.println("Item :"+itemName);
-        System.out.println("Total Amount :"+totalPrice);
-        if(totalPrice>=2000){
+        System.out.println("Customer name :" + customerName);
+        System.out.println("Item :" + itemName);
+        System.out.println("Total Amount :" + totalPrice);
+        if (totalPrice >= 2000) {
             System.out.println("15% discount applied ");
-            discount = totalPrice*15/100;
-        }
-        else if(totalPrice>=1000){
+            discount = totalPrice * 15 / 100;
+        } else if (totalPrice >= 1000) {
             System.out.println("8% discount applied ");
-            discount = totalPrice*8/100;
-        }
-        else{
+            discount = totalPrice * 8 / 100;
+        } else {
             System.out.println("No Discount applied");
-            discount =0;
+            discount = 0;
         }
-        double finalAmount = totalPrice-discount;
-        System.out.println("Final Amount :"+finalAmount);
+        double finalAmount = totalPrice - discount;
+        System.out.println("Final Amount :" + finalAmount);
     }
 }

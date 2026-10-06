@@ -15,16 +15,13 @@ public class FoodOrder implements  Order{
     }
     @Override
     public void calculateBill(){
-         totalPrice= price*quantity;
-
-    }
-    void displayDetails(){
+        totalPrice= price*quantity;
         System.out.println("Customer name :"+customerName);
         System.out.println("Item :"+itemName);
         System.out.println("Total Amount :"+totalPrice);
         if(totalPrice>=1000){
             System.out.println("10% discount applied ");
-             discount = totalPrice*10/100;
+            discount = totalPrice*10/100;
         }
         else if(totalPrice>=500){
             System.out.println("5% discount applied ");
@@ -36,6 +33,8 @@ public class FoodOrder implements  Order{
         }
         double finalAmount = totalPrice-discount;
         System.out.println("Final Amount :"+finalAmount);
+
     }
+
 }
 
