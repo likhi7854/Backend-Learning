@@ -8,14 +8,13 @@ public class Calculate {
             System.out.println(d);
             int h = calculate(10,20,78);
             System.out.println(h);
-
     }
     static int calculate(int a,int b){
-         return  a+b;
+        return  a+b;
     }
-
     static double calculate(double a, double b){
-            return a+b;
+
+        return a+b;
     }
 
     static int  calculate(int a, int b, int c){
