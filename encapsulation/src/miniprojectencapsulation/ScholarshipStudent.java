@@ -1,32 +1,49 @@
 package miniprojectencapsulation;
-
 public class ScholarshipStudent {
-     private int studentId;
-     private String name;
-     private int[] marks;
-     private double familyIncome;
-     private double scholarshipAmount;
+    private int studentId;
+    private String name;
+    private int[] marks;
+    private double familyIncome;
+    private double scholarshipAmount;
 
-    public ScholarshipStudent(int studentId, String name, int[] marks) {
 
-        boolean valid = true;
-        if (marks == null || marks.length == 0) {
-            valid = false;
-            System.out.println("At least one subject mark is required!");
-        }
-        else {
+    public ScholarshipStudent(int studentId, String name, int[] marks, double familyIncome) {
+
+
+
+
+        this.studentId = studentId;
+        this.name = name;
+        boolean validMarks = marks != null && marks.length > 0;
+
+        if (validMarks) {
             for (int i = 0; i < marks.length; i++) {
                 if (marks[i] < 0 || marks[i] > 100) {
-                    valid = false;
-                    System.out.println("Invalid marks!");
+                    validMarks = false;
                     break;
                 }
             }
         }
-        this.studentId = studentId;
-        this.name = name;
-        this.marks = marks;
-        this.familyIncome = familyIncome;
+
+        if (validMarks) {
+            this.marks = new int[marks.length];
+
+            for (int i = 0; i < marks.length; i++) {
+                this.marks[i] = marks[i];
+            }
+        } else {
+            this.marks = new int[0];
+            System.out.println("Invalid marks for " + name);
+        }
+
+        if (familyIncome >= 0) {
+            this.familyIncome = familyIncome;
+        } else {
+            this.familyIncome = 0;
+            System.out.println("Invalid family income for " + name);
+        }
+
+        this.scholarshipAmount = 0;
     }
 
     public int getStudentId() {
@@ -38,7 +55,13 @@ public class ScholarshipStudent {
     }
 
     public int[] getMarks() {
-        return marks;
+        int[] copy = new int[marks.length];
+
+        for (int i = 0; i < marks.length; i++) {
+            copy[i] = marks[i];
+        }
+
+        return copy;
     }
 
     public double getFamilyIncome() {
@@ -49,44 +72,49 @@ public class ScholarshipStudent {
         return scholarshipAmount;
     }
 
-    public void setFamilyIncome(double familyIncome){
-        if(familyIncome>0) {
+    public void setFamilyIncome(double familyIncome) {
+        if (familyIncome >= 0) {
             this.familyIncome = familyIncome;
-            System.out.println("Family Income :"+familyIncome);
+        } else {
+            System.out.println("Family income cannot be negative!");
         }
-        else{
-            System.out.println("Insufficient Income ");
+    }
+
+    public double calculateAverage() {
+        if (marks.length == 0) {
+            return 0;
         }
 
+        int total = 0;
 
+        for (int i = 0; i < marks.length; i++) {
+            total = total + marks[i];
+        }
+
+        return (double) total / marks.length;
     }
 
-    public void calculateAverage(){
-          int total =0;
-          for(int i=0;i<marks.length;i++){
-               total+=marks[i];
-          }
-          System.out.println("Total Marks :"+total);
-          double average = (double) total/marks.length;
-          System.out.println("Average of the all subjects :"+average);
-          calculateScholarship(average);
+    public void calculateScholarship() {
+        double average = calculateAverage();
+
+        if (average >= 90 && familyIncome <= 200000) {
+            scholarshipAmount = 50000;
+        } else if (average >= 80 && familyIncome <= 300000) {
+            scholarshipAmount = 30000;
+        } else if (average >= 70 && familyIncome <= 200000) {
+            scholarshipAmount = 15000;
+        } else {
+            scholarshipAmount = 0;
+        }
     }
 
-    public void calculateScholarship(double average){
-          if(average >= 90 && familyIncome <= 200000){
-              System.out.println("Scholarship is : ₹50,000");
-          }
-          else if(average >= 80 && familyIncome <= 300000){
-            System.out.println("Scholarship is : ₹30,000");
-          }
-          else if(average >= 70 && familyIncome <= 200000){
-              System.out.println("Scholarship is : ₹15,000");
-          }
-          else{
-              System.out.println("Scholarship is : 0");
-          }
+    public void displayDetails() {
+        System.out.println("Student: " + name);
+        System.out.println("Average: " + calculateAverage());
+        System.out.println("Family Income: " + familyIncome);
+        System.out.println("Scholarship: " + scholarshipAmount);
+        System.out.println();
     }
-
-
-
 }
+
+
