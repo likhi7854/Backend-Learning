@@ -24,7 +24,7 @@ public class Expense {
     }
 
     public void setAmount(double amount) {
-        if(amount<0){
+        if(amount>0){
              this.amount = amount;
             System.out.println("Amount updated successfully\"");
         }

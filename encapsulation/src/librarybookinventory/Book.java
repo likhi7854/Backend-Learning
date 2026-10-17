@@ -56,7 +56,8 @@ public class Book {
         if(this.availableCopies>0) {
             System.out.println("Copies are available");
             System.out.println("Borrow Successful!!");
-            System.out.println("Total available books"+this.availableCopies--);
+            this.availableCopies--;
+            System.out.println("Total available books"+this.availableCopies);
         }
         else{
             System.out.println("Book not available");
@@ -66,7 +67,8 @@ public class Book {
 
     public void returnBook(){
         System.out.println("Return Successful!!");
-        System.out.println("Available Books: "+ this.availableCopies++);
+        this.availableCopies++;
+        System.out.println("Available Books: "+ this.availableCopies);
     }
 
 
