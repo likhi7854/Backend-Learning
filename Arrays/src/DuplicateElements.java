@@ -25,7 +25,6 @@ public class DuplicateElements {
             if (alreadyPrinted) {
                 continue;
             }
-            // Check whether this element appears again
             for (int j = i + 1; j < n; j++) {
                 if (arr[i] == arr[j]) {
                     System.out.println(arr[i]);
